@@ -1,13 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Busca Cep</title>
+    <link rel="shortcut icon" href="assets/img/icon.png" type="image/x-icon">
+     <!-- ? Google Icon Font -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <!-- ? materialize cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">    
+    <!-- ? Estilo css-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+</head>
+<nav class="teal darken-3">
+    <div class="container">        
+      <a href="index.html" style="font-size: 1.3em;" class="brand-logo left black-text">
+        <i style="font-size: 30px;" class="material-icons">location_on</i> BUSCA CEP
+      </a>
+      <ul class="right">
+        <li><a class="black-text" style="font-size: 1.3em" href="index.html">HOME</a></li>
+      </ul>
+    </div>
+  </nav>
+
 <div class="container">
     <div class="row content">
         <div class="col s12 m12 l12">
-            <form>
+            <form id="formRua" method="" action="">
                 <label for="rua">Digite o nome da rua/logradouro<input type="text" id="rua"/></label>
                 <label for="cidade">Digite a cidade<input type="text" id="cidade"/></label>
                 <label for="estado">Digite o estado<input type="text" id="estado"/></label>
-                <button>Pesquisar</button>
+                <button onblur="consultarCepPorRua()" type="reset">Pesquisar</button>
             </form>
         </div>
     </div>
 </div>
+
+<!--* Div para mostrar o resultado da consulta -->
+<div id="resultado"></div>
+
+<script src="assets/js/buscaCep.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>    
+
+</body>
+</html>
 

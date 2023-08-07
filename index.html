@@ -5,43 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>App Busca Cep</title>
     <link rel="shortcut icon" href="assets/img/icon.png" type="image/x-icon">
-     <!-- ? Estilo css-->
-    <link rel="stylesheet" href="assets/css/style.css">
      <!-- ? Google Icon Font -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
      <!-- ? materialize cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">    
+    <!-- ? Estilo css-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 </head>
 <body>      
     <nav class="teal darken-3">
         <div class="container">        
-          <a href="index.html" style="font-weight: 900;" class="brand-logo center black-text">
-            <i style="font-size: 50px;" class="material-icons">location_on</i> BUSCA CEP
+          <a href="?" style="font-size: 1.3em;" class="brand-logo left black-text">
+            <i style="font-size: 30px;" class="material-icons">location_on</i> BUSCA CEP
           </a>
+          <ul class="right">
+            <li><a class="black-text" style="font-size: 1.3em" href="?">HOME</a></li>
+          </ul>
         </div>
       </nav>
     <div class="main" id="paginas">
         <div class="container">
             <div class="row content">
                 <div class="col s12 m6 l6">
-                    <a id="cep" href="#"> 
+                    <a id="cep" href="cep.html"> 
                         <img src="assets/img/icon-cep.png" alt="">
                     </a><br>
                 </div>
                 <div class="col s12 m6 l6">
-                    <a id="endereco" href="#"> 
+                    <a id="endereco" href="endereco.html"> 
                         <img src="assets/img/icon-endereco.png" alt="">
                     </a>
                 </div>                
             </div>
-        </div>         
+        </div>    
         
     </div>
   
-    
-
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>    
-    <script src="assets/js/main.js"></script>
+    
 </body>
 </html>

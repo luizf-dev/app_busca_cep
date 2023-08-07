@@ -1,29 +1,12 @@
-//* Método load do Jquery para chamada das páginas
-$(document).ready(() => {
 
-    $('#home').on('click', () => {
-        $('#paginas').load('index.html');
-    });
-
-    $('#cep').on('click', () => {
-        $('#paginas').load('cep.html');
-    });
-
-    $('#endereco').on('click', () => {
-       $('#paginas').load('endereco.html');
-    });
-});
-
-
-
-/*const resultado = document.getElementById('resultado')
+const resultado = document.getElementById('resultado');
 
 
 function getDadosCEP(cep){
 
-    let url = 'https://viacep.com.br/ws/'+cep+'/json/';
+    let url = 'https://viacep.com.br/ws/'+89296000+'/json/';
 
-    //console.log(url);
+    console.log(url);
 
     let xmlHttp = new XMLHttpRequest()
 
@@ -44,8 +27,6 @@ function getDadosCEP(cep){
             const titulo = document.createElement('span');
             titulo.textContent = 'RESULTADOS DA SUA BUSCA!';
             divResultadoCep.appendChild(titulo);
-
-
 
             if(dadosObj.cep){
                 divResultadoCep.innerHTML += '<p><span>Cep: </span>' +dadosObj.cep+'</p>';
@@ -90,43 +71,3 @@ function getDadosCEP(cep){
 
      xmlHttp.send();
 }
-*/
-
-
-/*
-function consultarCepPorRua() {
-    const rua = document.getElementById('ruaInput').value;
-    const cidade = document.getElementById('cidadeInput').value;
-    const uf = document.getElementById('ufInput').value;
-
-    const url = `https://viacep.com.br/ws/${uf}/${cidade}/${rua}/json/`;
-
-    fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        const resultadoDiv = document.getElementById('resultado');
-        resultadoDiv.innerHTML = ''; // Limpar o conteúdo anterior (se houver)
-
-       
-        if (!data.erro) {
-
-            const ceps = data.map(obj => obj.cep);
-            
-          // Criar os parágrafos com os resultados do CEP
-          resultadoDiv.innerHTML += `<p>CEP(s) encontrado(s): ${ceps.join(', ')} </p>`;
-        } else {
-          resultadoDiv.innerHTML += '<p>Nenhum CEP encontrado para esse logradouro.</p>';
-        }
-      })
-      .catch(error => {
-        const resultadoDiv = document.getElementById('resultado');
-        resultadoDiv.innerHTML = '<p>Ocorreu um erro na consulta.</p>';
-        console.error('Ocorreu um erro na consulta:', error);
-      });
-
-      
-  }
-  */
-
-
-

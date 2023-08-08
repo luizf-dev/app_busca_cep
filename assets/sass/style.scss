@@ -14,12 +14,6 @@ img{
     width: 300px;
 }
 
-
-span{
-    color: #000;
-    font-weight: 900;
-}
-
 span{
     color: darkslategray;
     font-size: 1.3em;
@@ -31,7 +25,6 @@ h6{
     font-size: 1.5em;
     font-weight: 900;
     text-transform: capitalize;
-
 }
 
 p{
@@ -65,7 +58,7 @@ label{
     width: 100%;
     color: #000;
     align-self: flex-start;
-    transition: 0.8s linear;
+    transition: 0.4s linear;
     font-weight: 900;
     font-size: 1.2em;
 }
@@ -90,7 +83,7 @@ input{
 
 input:focus{
     outline: none;
-    border-color: silveer;
+    border-color: silver;
 }
 
 button{
@@ -137,7 +130,7 @@ button:focus{
     }
 
     img{
-        width: 250px;
+        width: 300px;
     }   
 }
 
@@ -154,7 +147,7 @@ button:focus{
     } 
 
     img{
-        width: 250px;
+        width: 300px;
     }
   
   

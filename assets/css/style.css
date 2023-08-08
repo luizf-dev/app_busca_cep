@@ -13,11 +13,6 @@ img {
 }
 
 span {
-  color: #000;
-  font-weight: 900;
-}
-
-span {
   color: darkslategray;
   font-size: 1.3em;
   font-weight: 900;
@@ -60,7 +55,7 @@ label {
   width: 100%;
   color: #000;
   align-self: flex-start;
-  transition: 0.8s linear;
+  transition: 0.4s linear;
   font-weight: 900;
   font-size: 1.2em;
 }
@@ -85,7 +80,7 @@ input {
 
 input:focus {
   outline: none;
-  border-color: silveer;
+  border-color: silver;
 }
 
 button {
@@ -123,7 +118,7 @@ button:focus {
     font-size: 1.1em;
   }
   img {
-    width: 250px;
+    width: 300px;
   }
 }
 @media (min-width: 576px) and (max-width: 767.98px) {
@@ -135,7 +130,7 @@ button:focus {
     margin: 0 auto 20px;
   }
   img {
-    width: 250px;
+    width: 300px;
   }
 }
 @media (min-width: 768px) and (max-width: 991.98px) {

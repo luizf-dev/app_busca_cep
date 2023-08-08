@@ -1,37 +1,78 @@
+const resultado = document.getElementById('resultado');
+
+const form = document.getElementById('formRua');
+
+form.addEventListener('submit', function(event){
+
+  event.preventDefault();
+
+  consultarCepPorRua();
+});
+
+
 //* Consultar cep por nome da rua
 function consultarCepPorRua() {
-   // const rua = document.getElementById('rua').value;
-   // const cidade = document.getElementById('cidade').value;
-   // const uf = document.getElementById('estado').value;
-   const rua = 'eduardo neidert';
-   const cidade = 'rio negrinho';
-   const uf = 'sc';
+   const rua = document.getElementById('rua').value;
+   const cidade = document.getElementById('cidade').value;
+   const uf = document.getElementById('estado').value.toUpperCase();
 
-    const url = `https://viacep.com.br/ws/${uf}/${cidade}/${rua}/json/`;
 
-    console.log(url);
+  const url = `https://viacep.com.br/ws/${uf}/${cidade}/${rua}/json/`;
 
-    fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        const resultadoDiv = document.getElementById('resultado');
-        resultadoDiv.innerHTML = ''; // Limpar o conteúdo anterior (se houver)
 
-       
-        if (!data.erro) {
+  let xmlHttp = new XMLHttpRequest();
 
-            const ceps = data.map(obj => obj.cep);
-            
-          // *Criar os parágrafos com os resultados do CEP
-          resultadoDiv.innerHTML += `<p>CEP(s) encontrado(s): ${ceps.join(', ')} </p>`;
-        } else {
-          resultadoDiv.innerHTML += '<p>Nenhum CEP encontrado para esse logradouro.</p>';
-        }
-      })
-      .catch(error => {
-        const resultadoDiv = document.getElementById('resultado');
-        resultadoDiv.innerHTML = '<p>Ocorreu um erro na consulta.</p>';
-        console.error('Ocorreu um erro na consulta:', error);
-      });
+  xmlHttp.open('GET', url, true);
+
+  xmlHttp.onreadystatechange = () => {
+
+    if(xmlHttp.readyState === 4 && xmlHttp.status === 200){
+
+      let dadosText = xmlHttp.responseText;
+      let dadosObj = JSON.parse(dadosText);  
       
+      resultado.innerHTML = '';
+
+      const divResultado = document.createElement('div');
+      divResultado.id = 'resultadoCep';
+
+
+      if(!dadosObj.erro){
+
+        console.log(dadosObj);
+
+        const cepsEncontrados = dadosObj.map(obj => obj.cep);
+        const complementos = dadosObj.map(obj => obj.complemento);
+
+        if(cepsEncontrados.length === complementos.length){
+          divResultado.innerHTML += `<p><span>Cep(s) encontrados para a rua: <br> <h6> ${rua}</h6><br></span></p>`;
+          
+          document.getElementById('estado').value = '';
+          document.getElementById('rua').value = '';
+          document.getElementById('cidade').value = '';
+
+          for(let i = 0; i < cepsEncontrados.length; i++){
+            divResultado.innerHTML += `<p><span></span>${cepsEncontrados[i]} - ${complementos[i]}</p>`;
+          }
+        }
+        
+      }else{
+
+        divResultado.innerHTML += '<p><span>Error: </span> Ocorreu um erro na consulta!</p>';
+        console.error('Ocorreu um erro na consulta! <br> Status:', xmlHttp.status);
+
+      }
+
+      resultado.appendChild(divResultado); 
+      
+
+    }
+  
   }
+
+  xmlHttp.send();
+
+
+  }
+
+

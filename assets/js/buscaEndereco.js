@@ -1,12 +1,12 @@
 
 const resultado = document.getElementById('resultado');
-
+const cep = document.getElementById('cepInput').value.replace('-', '');
 
 function getDadosCEP(cep){
 
-    let url = 'https://viacep.com.br/ws/'+89296000+'/json/';
+    let url = 'https://viacep.com.br/ws/'+cep+'/json/';
 
-    console.log(url);
+    //console.log(url);
 
     let xmlHttp = new XMLHttpRequest()
 
@@ -22,7 +22,7 @@ function getDadosCEP(cep){
             resultado.innerHTML = '';
 
             const divResultadoCep = document.createElement('div');
-            divResultadoCep.id = 'resultadoCEP';
+            divResultadoCep.id = 'resultadoEnd';
 
             const titulo = document.createElement('span');
             titulo.textContent = 'RESULTADOS DA SUA BUSCA!';
@@ -70,4 +70,14 @@ function getDadosCEP(cep){
     }
 
      xmlHttp.send();
+}
+
+//*Função para aplicar uma máscara ao input do CEP
+function mascararCep(input){
+    const cepValue = input.value.replace(/\D/g, '');
+    if(cepValue.length > 5){
+        input.value = `${cepValue.substr(0,5)}-${cepValue.substr(5,3)}`;
+    }else{
+        input.value = cepValue;
+    }
 }

@@ -26,6 +26,14 @@ span{
     font-weight: 900;
 }
 
+h6{
+    color: red;
+    font-size: 1.5em;
+    font-weight: 900;
+    text-transform: capitalize;
+
+}
+
 p{
     color: #000;
     font-size: 1.2em;
@@ -33,7 +41,7 @@ p{
 }
 
 //* formularios inicio
-form, #resultadoCEP{
+form{
     margin: 0 auto;
     width: 50%;
     height: auto;
@@ -41,6 +49,16 @@ form, #resultadoCEP{
     padding: 2rem;
     border-radius: 0.5rem;
     box-shadow: 5px 5px 7px #000;
+}
+
+#resultadoCep, #resultadoEnd{
+    margin: 0 auto 20px;
+    width: 34%;
+    height: auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 5px 5px 7px #000;    
 }
 
 label{
@@ -108,13 +126,18 @@ button:focus{
         width: 100%;
     }
 
-    #resultadoCEP{
-        width: 100%;
-        margin: 0 20px 0 20px;
+    #resultadoCep, #resultadoEnd{
+        width: 85%;
+        margin: 0 auto 20px;
+
+    }
+
+    p, span{
+        font-size: 1.1em;
     }
 
     img{
-        width: 150px;
+        width: 250px;
     }   
 }
 
@@ -125,12 +148,13 @@ button:focus{
         width: 80%;
     }
 
-    #resultadoCEP{
-        width: 100%;
-        margin: 0 20px 0 20px;
+    #resultadoCep, #resultadoEnd{
+        width: 85%;
+        margin: 0 auto 20px;
     } 
+
     img{
-        width: 150px;
+        width: 250px;
     }
   
   
@@ -138,6 +162,11 @@ button:focus{
 
 // ? Dispositivos médios (tablets, 768px e superior)*/
 @media (min-width: 768px) and (max-width: 991.98px) {
+
+    #resultadoCep, #resultadoEnd{
+        width: 70%;
+        margin: 0 auto 20px;
+    } 
 
   
   

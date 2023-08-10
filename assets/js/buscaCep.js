@@ -83,8 +83,6 @@ function consultarCepPorRua() {
 
   //* Envia a requisção
   xmlHttp.send();
-
-
 }
 
 

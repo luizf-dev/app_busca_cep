@@ -5,13 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>App Busca Cep</title>
         <link rel="shortcut icon" href="assets/img/icon.png" type="image/x-icon">
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>            
         <!-- ? Google Icon Font -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <!-- ? materialize cdn -->
+        <!-- ? Materialize cdn -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">    
         <!-- ? Estilo css-->
         <link rel="stylesheet" href="assets/css/style.css">
-        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     </head>
     <body>      
         <nav class="teal darken-3">
@@ -28,20 +29,20 @@
             <div class="container">
                 <div class="row content">
                     <div class="col s12 m6 l6">
-                        <a id="cep" href="cep.html"> 
+                        <a href="#" id="cep" onclick="requisitarPaginas('cep.html')"> 
                             <img src="assets/img/icon-cep.png" alt="">
                         </a><br>
                     </div>
                     <div class="col s12 m6 l6">
-                        <a id="endereco" href="endereco.html"> 
+                        <a href="#" id="endereco" onclick="requisitarPaginas('endereco.html')"> 
                             <img src="assets/img/icon-endereco.png" alt="">
                         </a>
                     </div>                
                 </div>
             </div>       
         </div>
-    
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>    
-        
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/buscaCep.js"></script>
+    <script src="assets/js/buscaEndereco.js"></script>
     </body>
 </html>

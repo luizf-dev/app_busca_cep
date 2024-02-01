@@ -20,6 +20,10 @@ function consultarCepPorRua() {
    const cidade = document.getElementById('cidade').value;
    const uf = document.getElementById('estado').value.toUpperCase();
 
+   if(rua == '' || cidade == '' || uf == ''){
+    alert('Digite todos os campos corretamente!')
+  }
+
 
   //* URL para a API ViaCep dos correios
   const url = `https://viacep.com.br/ws/${uf}/${cidade}/${rua}/json/`;

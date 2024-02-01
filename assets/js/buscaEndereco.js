@@ -8,6 +8,10 @@ const cep = document.getElementById('cepInput').value.replace('-', '');
 //* Função para consultar o endereço fornecendo o numero do CEP
 function getDadosCEP(cep){
 
+    if(cep == ''){
+        alert('Digite o campo corretamente!')
+    }
+
     //* URL para a API ViaCep dos correios
     let url = 'https://viacep.com.br/ws/'+cep+'/json/';
 
